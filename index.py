@@ -18,17 +18,14 @@ cur = db.cursor()
 query = '''
 SELECT NAME , SQL FROM sqlite_master 
 '''
-
-
 cur.execute(query)
 data = cur.fetchall()
 
 
 for table in data :
-    print(table[0])
+
     SQL = table[1]
     SQLR = SQL.replace('"','')
-    print(SQLR)
-    print(SQL)
+
     Mysqlcur.execute(SQLR)
 
